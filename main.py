@@ -1,6 +1,6 @@
 import getpass
 import os,binascii
-from uuid import uuid4
+import uuid
 import random
 import string
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC as pbkdf2_hmac
@@ -10,15 +10,27 @@ from cryptography.hazmat.backends import default_backend
 from cryptography.fernet import Fernet
 import base64
 
+def random_uuid():
+     return uuid.UUID(bytes=bytes(random.getrandbits(8) for _ in range(16)), version=4)
+
 user = input("Please enter your username\n")
 password = getpass.getpass()
 print("Password is - " + password)
+
+random.seed(user)
+
+salt = random_uuid()
+
+os.system("mkdir " + str(salt))
+
+os.system("cd " + str(salt))
+
+os.system("ls")
+
+
 #salt = "ac474397d0ae491d952ca3fef63a2444"
 #salt = binascii.unhexlify(salt)
 #salt = os.urandom(16)
-with open ('salt.txt','wb') as file:
-    salt = file.read()
-
 #print(salt)
 #salt = str(salt)
 #salt.replace('-',' ')
@@ -28,7 +40,7 @@ with open ('salt.txt','wb') as file:
 #salt = salt.encode()
 user1 = user.encode("utf8")
 pwd1 = password.encode("utf8")
-kdf = pbkdf2_hmac(algorithm=hashes.SHA256(),length=32,salt=salt,iterations=100,backend=default_backend())
+kdf = pbkdf2_hmac(algorithm=hashes.SHA256(),length=32,salt=salt.bytes,iterations=100,backend=default_backend())
 key=base64.urlsafe_b64encode(kdf.derive(user1 + pwd1))
 print(str(key) + "\n")
 f = Fernet(key)
