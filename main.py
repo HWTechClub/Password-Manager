@@ -16,6 +16,8 @@ print("Password is - " + password)
 #salt = "ac474397d0ae491d952ca3fef63a2444"
 #salt = binascii.unhexlify(salt)
 salt = os.urandom(16)
+with open ('salt.txt','wb') as file:
+    file.write(salt)
 #print(salt)
 #salt = str(salt)
 #salt.replace('-',' ')
