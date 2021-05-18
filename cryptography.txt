@@ -1,0 +1,48 @@
+CREATE ACCOUNT:
+
+USER:Mohit
+PASS: myPa$$
+
+SIGN INTO ACCOUNT: using the master password
+
+After Sign in: the home interface shows this:
+
+------------------------------
+Services	| Passwords
+------------------------------
+Google	| xxxxxxxxxx
+Facebook | xxxxxxxxxx
+Instagram| xxxxxxxxxx
+------------------------------D
+
+3. The user must input the name of the service and they'll get the password stored in plain text.
+
+HOW IT WORKS:
+
+1. When creating account: Hash "myPas$$" and store it in DB.
+
+2. When Signing in: Hash the inputted pass and get the hash of the password stored. If inputHash == storedHash ? Gain entry : try again (3 attempts)
+
+3. After sign in, the frontEnd pulls all the services and the corresponding passwords in xxxxxxxxx format.
+
+4. ENCRYPTION:
+suppose the password of my google account is "googlePassword".
+
+"googlePassword" -> a simple caeser cipher keeping the key(shift value) to be the number of characters in the name of the user (say 5). -> generate the Caesar cipher (lttlqjUfxxbtwi) -> 
+convert the returned caesar cipher to another cipher using Vigenere cipher (Key= {userName} Alphabet= {qwertyuiopasdfghjklzxcvbnm}) -> this will return (kdzmthGewnvdjg).
+
+Finally, this will be stored in the DB.
+
+The DB can be a JSON file in a password protected(AES 256 encrypted) zip file: the password can be anything since cracking it is not really possible using bruteforce techniques.
+
+EVEN IF THE DB IS CRACKED, THE PASSWORDS CANNOT BY CRACKED SINCE WE CIPHERED THEM TWICE.
+
+5. DECRYPTION:
+The simple part,
+
+In the home interface, when the user clicks on a service, the DB gets the password stored,
+
+Then that password will be decrypted like this:- Vigenere Cipher -> Caesar cipher -> true text.
+And that true text will be shown to the user.
+
+
