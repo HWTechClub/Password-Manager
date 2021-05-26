@@ -4,5 +4,11 @@
     "user": "user",
     "pwd": "pass",
     "notes": "hope this works"
+  },
+  {
+    "site": "www.google.com",
+    "user": "omar",
+    "pwd": "kham",
+    "notes": "0"
   }
 ]
