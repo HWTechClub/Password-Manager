@@ -1,0 +1,5 @@
+# pip install -r requirements.txt
+
+pyqt5
+pyqt5-tools
+PyQt5Designer
