@@ -1,4 +1,5 @@
 import json
+import getpass
 
 #imports the json data from the file to a variable passwords
 file = "test1.json"
@@ -23,9 +24,13 @@ def read():
 def write():
     data = {}
     data["title"] = input("Title: ")
+    for entry in passwords:
+        if entry["title"] == data["title"]:
+            print("This title is already in use. Please try another one.")
+            exit(0)
     data["site"] = input("Site: ")
     data["user"] = input("User ID: ")
-    data["pwd"] = input ("Password: ")
+    data["pwd"] = password = getpass.getpass()
     data["notes"] = input("Notes (Press 0 if no notes): ")
     if (data["notes"] == "0"):
         data["notes"] == None
@@ -65,9 +70,9 @@ def delete():
             break
     
 
-#write()
+write()
 #edit()
-read()
-delete()
-read()
+#read()
+#delete()
+#read()
 
