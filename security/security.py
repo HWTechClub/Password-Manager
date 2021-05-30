@@ -45,6 +45,7 @@ key=base64.urlsafe_b64encode(kdf.derive(user1 + pwd1))
 print(str(key) + "\n")
 f = Fernet(key)
 
+
 with open('../test/test.txt', 'rb') as file:
     file_read = file.read()
 encrypted_data = f.encrypt(file_read)
