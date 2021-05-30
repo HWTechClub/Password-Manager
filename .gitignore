@@ -1,5 +1,5 @@
-#Adding the json file to .gitignore
-test1.json
+#Adding the json files to .gitignore
+*.json
 
 
 # Byte-compiled / optimized / DLL files
