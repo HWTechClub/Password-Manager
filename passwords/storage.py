@@ -2,7 +2,7 @@ import json
 import getpass
 
 #imports the json data from the file to a variable passwords
-file = "test1.json"
+file = "jsons.json"
 with open(file,"r") as f:
     passwords = json.load(f)
 
@@ -27,7 +27,8 @@ def write():
     for entry in passwords:
         if entry["title"] == data["title"]:
             print("This title is already in use. Please try another one.")
-            exit(0)
+            write()
+            exit()
     data["site"] = input("Site: ")
     data["user"] = input("User ID: ")
     data["pwd"] = password = getpass.getpass()
