@@ -46,20 +46,20 @@ print(str(key) + "\n")
 f = Fernet(key)
 
 
-with open('../test/test.txt', 'rb') as file:
+with open('./test/test.txt', 'rb') as file:
     file_read = file.read()
 encrypted_data = f.encrypt(file_read)
 
-with open('../test/test.txt', 'wb') as file:
+with open('./test/test.txt', 'wb') as file:
     file.write(encrypted_data)
 print("Emcyption complete. \n")
-os.system("cat ../test/test.txt")
+os.system("cat ./test/test.txt")
 
 decrypted_data = f.decrypt(encrypted_data)
 
-with open('../test/test.txt', 'wb') as file:
+with open('./test/test.txt', 'wb') as file:
     file.write(decrypted_data)
 
 print("\nDecryption done. \n")
 
-os.system("cat ../test/test.txt")
+os.system("cat ./test/test.txt")
