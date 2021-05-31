@@ -38,7 +38,7 @@ def create_key(username, password):
     # Making a key with username and password.
     key=base64.urlsafe_b64encode(kdf.derive(usernameInBytes + pwdInBytes))
     
-    print("Key is " + str(key) + "\n")              #Remove later!!!
+    #print("Key is " + str(key) + "\n")              #Remove later!!!
 
     # Getting the actual key with Fernet. The object that is returned can only encrypt and decrypt messages using the key passed to Fernet.
     return Fernet(key)
@@ -65,11 +65,16 @@ def decrypt(key):
 
 username = input("Please enter your username\n")
 password = getpass.getpass()    
-print("Password is - " + password)
+#print("Password is - " + password)
 salt = init_salt(username)
 key = create_key(username, password)
-#encrypt(key)
-decrypt(key)
+choice = input("Do you want to encrypt or decrypt? \nPress 1 to encrypt or press 2 to decrypt. ")
+if (choice == '1'):
+    encrypt(key)
+elif choice == '2':
+    decrypt(key)
+else:
+    print("Wrong option.")
 
 # # If the platform is linux or Mac-OS
 # if sys.platform.startswith("linux") or sys.platform.startswith("darwin"):
