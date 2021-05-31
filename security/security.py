@@ -50,22 +50,13 @@ def encrypt(key):
     with open('./test/test.txt', 'wb') as file:
         file.write(encrypted_data)
 
-def parse(text):
-    try:
-        #return json.loads(text)
-        return True
-    except ValueError as e:
-        print('invalid json: %s' % e)
-        return False # or: raise
 
 def decrypt(key):
     with open('./test/test.txt', 'rb') as file:
         encrypted_data = file.read()
-    decrypted_data = key.decrypt(encrypted_data)
-    # with open('./test/test.txt', 'wb') as file:
-    #     file.write(decrypted_data)
-    bool_check = parse(decrypted_data)
-    if (bool_check == False):
+    try:
+        decrypted_data = key.decrypt(encrypted_data)
+    except:
         print("Username or password is incorrect. Please try again.")        
         return False
     with open('./test/test.txt', 'wb') as file:
@@ -77,7 +68,7 @@ password = getpass.getpass()
 print("Password is - " + password)
 salt = init_salt(username)
 key = create_key(username, password)
-#encrypt(key)
+encrypt(key)
 decrypt(key)
 
 # # If the platform is linux or Mac-OS
