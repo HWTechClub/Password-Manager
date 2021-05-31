@@ -66,7 +66,7 @@ def decrypt(key):
     return True
 
 #Remove once main file is implemented.
-# NOTE: Always encrypt file before exiting program. When user logs in, we decrypt the file and check if the key is valid. When user exits/logs out, automatic encryption.
+# NOTE: Always encrypt file before exiting program. When user logs in, we ONLY decrypt the file and check if the key is valid. When user exits/logs out, automatic encryption.
 username = input("Please enter your username\n")
 password = getpass.getpass()    
 #print("Password is - " + password)
