@@ -12,14 +12,11 @@ from cryptography.fernet import Fernet
 import base64
 import json
 
-def random_uuid():
-     return uuid.UUID(bytes=bytes(random.getrandbits(8) for _ in range(16)), version=4)
 
-
+#initializes the salt
 def init_salt(username):
     random.seed(username)
-    salt = random_uuid()
-    return salt
+    return uuid.UUID(bytes=bytes(random.getrandbits(8) for _ in range(16)), version=4)
 
 def create_key(username, password):
     
@@ -44,25 +41,32 @@ def create_key(username, password):
     return Fernet(key)
 
 def encrypt(key):
+    #Stores file contents in file_read.
     with open('./test/test.json', 'rb') as file:
         file_read = file.read()
+    #Encrypts file_read and writes it into the file.
     encrypted_data = key.encrypt(file_read)
     with open('./test/test.json', 'wb') as file:
         file.write(encrypted_data)
 
 
 def decrypt(key):
+    #Reads the file.
     with open('./test/test.json', 'rb') as file:
         encrypted_data = file.read()
+    #Fernet returns an error if the key for decryption is not the same as the key for encryption.
     try:
         decrypted_data = key.decrypt(encrypted_data)
     except:
         print("Username or password is incorrect. Please try again.")        
         return False
+    #Writes decrypted data back to the file.
     with open('./test/test.json', 'wb') as file:
         file.write(decrypted_data)
     return True
 
+#Remove once main file is implemented.
+# NOTE: Always encrypt file before exiting program. When user logs in, we decrypt the file and check if the key is valid. When user exits/logs out, automatic encryption.
 username = input("Please enter your username\n")
 password = getpass.getpass()    
 #print("Password is - " + password)
