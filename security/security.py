@@ -44,31 +44,31 @@ def create_key(username, password):
     return Fernet(key)
 
 def encrypt(key):
-    with open('./test/test.txt', 'rb') as file:
+    with open('./test/test.json', 'rb') as file:
         file_read = file.read()
     encrypted_data = key.encrypt(file_read)
-    with open('./test/test.txt', 'wb') as file:
+    with open('./test/test.json', 'wb') as file:
         file.write(encrypted_data)
 
 
 def decrypt(key):
-    with open('./test/test.txt', 'rb') as file:
+    with open('./test/test.json', 'rb') as file:
         encrypted_data = file.read()
     try:
         decrypted_data = key.decrypt(encrypted_data)
     except:
         print("Username or password is incorrect. Please try again.")        
         return False
-    with open('./test/test.txt', 'wb') as file:
+    with open('./test/test.json', 'wb') as file:
         file.write(decrypted_data)
     return True
 
 username = input("Please enter your username\n")
-password = getpass.getpass()
+password = getpass.getpass()    
 print("Password is - " + password)
 salt = init_salt(username)
 key = create_key(username, password)
-encrypt(key)
+#encrypt(key)
 decrypt(key)
 
 # # If the platform is linux or Mac-OS
