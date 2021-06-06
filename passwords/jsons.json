@@ -103,5 +103,26 @@
     "user": "",
     "pwd": "",
     "notes": ""
+  },
+  {
+    "title": "Gmail password",
+    "site": "gmail",
+    "user": "mohit",
+    "pwd": "mohit",
+    "notes": "0"
+  },
+  {
+    "title": "",
+    "site": "",
+    "user": "",
+    "pwd": "",
+    "notes": ""
+  },
+  {
+    "title": "facebook",
+    "site": "facebook.com",
+    "user": "mohit",
+    "pwd": "mohit",
+    "notes": "this is my fb password"
   }
 ]
