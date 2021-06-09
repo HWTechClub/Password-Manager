@@ -9,9 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from mainmenu import Ui_MainWindow
+from mainmenu import Ui_MainWindow2
 
-class Ui_MainWindow(object):
+class Ui_MainWindow1(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(411, 247)
@@ -61,7 +61,7 @@ class Ui_MainWindow(object):
     def thirdscr(self):
     #code from 3rd screen
         self.MainWindow = QtWidgets.QMainWindow()
-        self.ui = Ui_MainWindow()
+        self.ui = Ui_MainWindow2()
         self.ui.setupUi(self.MainWindow)
         self.MainWindow.show()
 
@@ -76,7 +76,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
+    ui = Ui_MainWindow1()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())

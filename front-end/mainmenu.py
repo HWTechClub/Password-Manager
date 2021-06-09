@@ -9,9 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from enterPassword import Ui_MainWindow3
 
-
-class Ui_MainWindow(object):
+class Ui_MainWindow2(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(600, 500)
@@ -84,7 +84,14 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
+        self.button1.clicked.connect(self.fourthscr)
+    def fourthscr(self):
+        # code of the 4th scr
+        self.MainWindow = QtWidgets.QMainWindow()
+        self.ui = Ui_MainWindow3()
+        self.ui.setupUi(self.MainWindow)
+        self.MainWindow.show()
+        
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
@@ -100,7 +107,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
+    ui = Ui_MainWindow2()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())

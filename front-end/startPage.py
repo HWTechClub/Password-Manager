@@ -10,7 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 #import 2nd screen
-from login import Ui_MainWindow 
+from login import Ui_MainWindow1 
 
 class Ui_PasswordManager(object):
     def setupUi(self, PasswordManager):
@@ -80,7 +80,7 @@ class Ui_PasswordManager(object):
     def secondscr(self):
         #code the 2nd screen here
         self.MainWindow = QtWidgets.QMainWindow()
-        self.ui = Ui_MainWindow()
+        self.ui = Ui_MainWindow1()
         self.ui.setupUi(self.MainWindow)
         self.MainWindow.show()
 
