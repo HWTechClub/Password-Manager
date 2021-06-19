@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from enterPassword import Ui_MainWindow3
 
+
 class Ui_MainWindow2(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -24,6 +25,7 @@ class Ui_MainWindow2(object):
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.clicked.connect(self.exitScr)
         font = QtGui.QFont()
         font.setFamily("Montserrat Light")
         font.setPointSize(9)
@@ -85,19 +87,25 @@ class Ui_MainWindow2(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         self.button1.clicked.connect(self.fourthscr)
+
     def fourthscr(self):
         # code of the 4th scr
         self.MainWindow = QtWidgets.QMainWindow()
         self.ui = Ui_MainWindow3()
         self.ui.setupUi(self.MainWindow)
         self.MainWindow.show()
-        
+
+    def exitScr(self):
+        print('exiting Main menu screen')
+        sys.exit()
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.pushButton.setText(_translate("MainWindow", "Exit"))
         self.label.setText(_translate("MainWindow", "Welcome back!"))
-        self.label_3.setText(_translate("MainWindow", "Please choose one option from below"))
+        self.label_3.setText(_translate(
+            "MainWindow", "Please choose one option from below"))
         self.button1.setText(_translate("MainWindow", "Enter new record"))
         self.button2.setText(_translate("MainWindow", "Review records"))
         self.menuExit.setTitle(_translate("MainWindow", "Exit"))

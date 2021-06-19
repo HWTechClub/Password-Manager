@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from mainmenu import Ui_MainWindow2
 
+
 class Ui_MainWindow1(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -58,18 +59,33 @@ class Ui_MainWindow1(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         self.button1.clicked.connect(self.thirdscr)
+    """
+    This function is for button1(Verify master password). Is the password present in the JSON file is correct, then main Menu window will open up
+    """
+
     def thirdscr(self):
-    #code from 3rd screen
-        self.MainWindow = QtWidgets.QMainWindow()
-        self.ui = Ui_MainWindow2()
-        self.ui.setupUi(self.MainWindow)
-        self.MainWindow.show()
+        # code from 3rd screen
+        if(self.textEdit.toPlainText() == 'techClub'):
+            self.MainWindow = QtWidgets.QMainWindow()
+            self.ui = Ui_MainWindow2()
+            self.ui.setupUi(self.MainWindow)
+            self.MainWindow.show()
+        else:
+            print('password is wrong')
+            # passwordChecker = 0
+            # while passwordChecker <= 5:
+            #     self.label2.setText(
+            #         f'Password is wrong, Number of tries left = {passwordChecker}')
+            #     passwordChecker = passwordChecker+1
+            # if(passwordChecker > 5):
+            # sys.exit()
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label2.setText(_translate("MainWindow", "Enter master password"))
-        self.button1.setText(_translate("MainWindow", "Verify master password"))
+        self.button1.setText(_translate(
+            "MainWindow", "Verify master password"))
 
 
 if __name__ == "__main__":
