@@ -1,3 +1,8 @@
+#Virtualenv files
+bin/
+lib/
+pyvenv.cfg
+
 #Adding the json files to .gitignore
 *.json
 
