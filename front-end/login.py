@@ -72,13 +72,7 @@ class Ui_MainWindow1(object):
             self.MainWindow.show()
         else:
             print('password is wrong')
-            # passwordChecker = 0
-            # while passwordChecker <= 5:
-            #     self.label2.setText(
-            #         f'Password is wrong, Number of tries left = {passwordChecker}')
-            #     passwordChecker = passwordChecker+1
-            # if(passwordChecker > 5):
-            # sys.exit()
+            self.label2.setText(f'Password is wrong, Please try again')
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

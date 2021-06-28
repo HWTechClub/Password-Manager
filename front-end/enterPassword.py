@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import json
 
 class Ui_MainWindow3(object):
     def setupUi(self, MainWindow):
@@ -138,7 +138,9 @@ class Ui_MainWindow3(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
+        # self.retranslateUi(MainWindow)
+        # QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.pushButton.clicked.connect(self.appendIntoFile)
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
@@ -149,7 +151,22 @@ class Ui_MainWindow3(object):
         self.label_5.setText(_translate("MainWindow", "Password"))
         self.label_6.setText(_translate("MainWindow", "Additional Notes"))
         self.pushButton.setText(_translate("MainWindow", "Confirm and Submit record"))
+        
+    """
+    This def will add all the information entered in the GUI into the JSON directly.
+    """
+    def appendIntoFile(self):
+        newData = {"title": self.lineEdit.text(),
+        "site":self.lineEdit_2.text(),"user":self.lineEdit_3.text(),"pwd":self.lineEdit_4.text(),"notes":"nopes"}
+        
+        with open("passwords/jsons.json","r") as f:
+            data = json.load(f)
 
+        # print(data)
+        data.append(newData)
+
+        with open("passwords/jsons.json","w") as file:
+            json.dump(data,file)
 
 if __name__ == "__main__":
     import sys
