@@ -10,6 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from enterPassword import Ui_MainWindow3
+from viewPassword import Ui_MainWindow as Ui_MainWindow4
 
 
 class Ui_MainWindow2(object):
@@ -86,12 +87,19 @@ class Ui_MainWindow2(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        self.button1.clicked.connect(self.fourthscr)
+        self.button1.clicked.connect(self.fourthscr)  # add records scr
+        self.button2.clicked.connect(self.fifthscr)  # review screen
 
     def fourthscr(self):
         # code of the 4th scr
         self.MainWindow = QtWidgets.QMainWindow()
         self.ui = Ui_MainWindow3()
+        self.ui.setupUi(self.MainWindow)
+        self.MainWindow.show()
+
+    def fifthscr(self):
+        self.MainWindow = QtWidgets.QMainWindow()
+        self.ui = Ui_MainWindow4()
         self.ui.setupUi(self.MainWindow)
         self.MainWindow.show()
 

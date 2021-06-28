@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'enterPassword.ui'
+# Form implementation generated from reading ui file 'viewPassword.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -12,15 +12,14 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import json
 
 
-class Ui_MainWindow3(object):
+class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(604, 509)
-        MainWindow.setMaximumSize(QtCore.QSize(604, 509))
+        MainWindow.resize(809, 617)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
-        self.verticalLayout.setObjectName("verticalLayout")
+        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName("gridLayout")
         self.label = QtWidgets.QLabel(self.centralwidget)
         font = QtGui.QFont()
         font.setFamily("Montserrat SemiBold")
@@ -28,31 +27,7 @@ class Ui_MainWindow3(object):
         self.label.setFont(font)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
-        self.verticalLayout.addWidget(self.label)
-        self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(
-            QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(
-            self.label_2.sizePolicy().hasHeightForWidth())
-        self.label_2.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setFamily("Montserrat Medium")
-        font.setPointSize(10)
-        self.label_2.setFont(font)
-        self.label_2.setObjectName("label_2")
-        self.verticalLayout.addWidget(self.label_2)
-        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(
-            QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.MinimumExpanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(
-            self.lineEdit.sizePolicy().hasHeightForWidth())
-        self.lineEdit.setSizePolicy(sizePolicy)
-        self.lineEdit.setObjectName("lineEdit")
-        self.verticalLayout.addWidget(self.lineEdit)
+        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
@@ -61,12 +36,13 @@ class Ui_MainWindow3(object):
         sizePolicy.setHeightForWidth(
             self.label_3.sizePolicy().hasHeightForWidth())
         self.label_3.setSizePolicy(sizePolicy)
+        self.label_3.setMaximumSize(QtCore.QSize(25, 18))
         font = QtGui.QFont()
         font.setFamily("Montserrat Medium")
         font.setPointSize(10)
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
-        self.verticalLayout.addWidget(self.label_3)
+        self.gridLayout.addWidget(self.label_3, 1, 0, 1, 1)
         self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.MinimumExpanding)
@@ -75,8 +51,10 @@ class Ui_MainWindow3(object):
         sizePolicy.setHeightForWidth(
             self.lineEdit_2.sizePolicy().hasHeightForWidth())
         self.lineEdit_2.setSizePolicy(sizePolicy)
+        self.lineEdit_2.setMinimumSize(QtCore.QSize(141, 0))
+        self.lineEdit_2.setMaximumSize(QtCore.QSize(16777215, 19))
         self.lineEdit_2.setObjectName("lineEdit_2")
-        self.verticalLayout.addWidget(self.lineEdit_2)
+        self.gridLayout.addWidget(self.lineEdit_2, 2, 0, 1, 1)
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
@@ -85,12 +63,13 @@ class Ui_MainWindow3(object):
         sizePolicy.setHeightForWidth(
             self.label_4.sizePolicy().hasHeightForWidth())
         self.label_4.setSizePolicy(sizePolicy)
+        self.label_4.setMaximumSize(QtCore.QSize(49, 18))
         font = QtGui.QFont()
         font.setFamily("Montserrat Medium")
         font.setPointSize(10)
         self.label_4.setFont(font)
         self.label_4.setObjectName("label_4")
-        self.verticalLayout.addWidget(self.label_4)
+        self.gridLayout.addWidget(self.label_4, 3, 0, 1, 1)
         self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.MinimumExpanding)
@@ -99,8 +78,19 @@ class Ui_MainWindow3(object):
         sizePolicy.setHeightForWidth(
             self.lineEdit_3.sizePolicy().hasHeightForWidth())
         self.lineEdit_3.setSizePolicy(sizePolicy)
+        self.lineEdit_3.setMinimumSize(QtCore.QSize(141, 0))
+        self.lineEdit_3.setMaximumSize(QtCore.QSize(16777215, 19))
         self.lineEdit_3.setObjectName("lineEdit_3")
-        self.verticalLayout.addWidget(self.lineEdit_3)
+        self.gridLayout.addWidget(self.lineEdit_3, 4, 0, 1, 1)
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setObjectName("pushButton")
+        self.gridLayout.addWidget(self.pushButton, 5, 0, 1, 1)
+        self.line = QtWidgets.QFrame(self.centralwidget)
+        self.line.setMinimumSize(QtCore.QSize(0, 51))
+        self.line.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line.setObjectName("line")
+        self.gridLayout.addWidget(self.line, 6, 0, 1, 1)
         self.label_5 = QtWidgets.QLabel(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
@@ -109,22 +99,17 @@ class Ui_MainWindow3(object):
         sizePolicy.setHeightForWidth(
             self.label_5.sizePolicy().hasHeightForWidth())
         self.label_5.setSizePolicy(sizePolicy)
+        self.label_5.setMaximumSize(QtCore.QSize(98, 18))
         font = QtGui.QFont()
         font.setFamily("Montserrat Medium")
         font.setPointSize(10)
         self.label_5.setFont(font)
         self.label_5.setObjectName("label_5")
-        self.verticalLayout.addWidget(self.label_5)
-        self.lineEdit_4 = QtWidgets.QLineEdit(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(
-            QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.MinimumExpanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(
-            self.lineEdit_4.sizePolicy().hasHeightForWidth())
-        self.lineEdit_4.setSizePolicy(sizePolicy)
-        self.lineEdit_4.setObjectName("lineEdit_4")
-        self.verticalLayout.addWidget(self.lineEdit_4)
+        self.gridLayout.addWidget(self.label_5, 7, 0, 1, 1)
+        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit.setMinimumSize(QtCore.QSize(261, 30))
+        self.lineEdit.setObjectName("lineEdit")
+        self.gridLayout.addWidget(self.lineEdit, 8, 0, 1, 1)
         self.label_6 = QtWidgets.QLabel(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
@@ -133,22 +118,21 @@ class Ui_MainWindow3(object):
         sizePolicy.setHeightForWidth(
             self.label_6.sizePolicy().hasHeightForWidth())
         self.label_6.setSizePolicy(sizePolicy)
+        self.label_6.setMaximumSize(QtCore.QSize(70, 18))
         font = QtGui.QFont()
         font.setFamily("Montserrat Medium")
         font.setPointSize(10)
         self.label_6.setFont(font)
         self.label_6.setObjectName("label_6")
-        self.verticalLayout.addWidget(self.label_6)
-        self.additionalText = QtWidgets.QTextEdit(self.centralwidget)
-        self.additionalText.setReadOnly(False)
-        self.additionalText.setObjectName("additionalText")
-        self.verticalLayout.addWidget(self.additionalText)
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setObjectName("pushButton")
-        self.verticalLayout.addWidget(self.pushButton)
+        self.gridLayout.addWidget(self.label_6, 9, 0, 1, 1)
+        self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
+        self.textEdit.setMinimumSize(QtCore.QSize(256, 0))
+        self.textEdit.setMaximumSize(QtCore.QSize(16777215, 192))
+        self.textEdit.setObjectName("textEdit")
+        self.gridLayout.addWidget(self.textEdit, 10, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 604, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 809, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -157,46 +141,42 @@ class Ui_MainWindow3(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        # self.retranslateUi(MainWindow)
-        # QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        self.pushButton.clicked.connect(self.appendIntoFile)
+
+        self.pushButton.clicked.connect(self.verifySubmittedForm)
+
+    def verifySubmittedForm(self):
+        with open("passwords/jsons.json", "r") as read:
+            data = json.load(read)
+
+        for i in range(len(data)):
+            site = data[i]["site"]
+            user = data[i]["user"]
+
+            if(self.lineEdit_2.text() == site and self.lineEdit_3.text() == user):
+                self.lineEdit.setText(data[i]["pwd"])
+                self.textEdit.setText(data[i]["notes"])
+                break
+            else:
+                print("sorry, Entry doesn't exist :(")
+                break
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate(
-            "MainWindow", "Enter all the required fields"))
-        self.label_2.setText(_translate("MainWindow", "Title"))
+            "MainWindow", "Enter the site and User ID to gain access to the password"))
         self.label_3.setText(_translate("MainWindow", "Site"))
         self.label_4.setText(_translate("MainWindow", "User ID"))
-        self.label_5.setText(_translate("MainWindow", "Password"))
-        self.label_6.setText(_translate("MainWindow", "Additional Notes"))
-        self.pushButton.setText(_translate(
-            "MainWindow", "Confirm and Submit record"))
-
-    """
-    This def will add all the information entered in the GUI into the JSON directly.
-    """
-
-    def appendIntoFile(self):
-        newData = {"title": self.lineEdit.text(),
-                   "site": self.lineEdit_2.text(), "user": self.lineEdit_3.text(), "pwd": self.lineEdit_4.text(), "notes": self.additionalText.toPlainText()}
-
-        with open("passwords/jsons.json", "r") as f:
-            data = json.load(f)
-
-        # print(data)
-        data.append(newData)
-
-        with open("passwords/jsons.json", "w") as file:
-            json.dump(data, file)
+        self.pushButton.setText(_translate("MainWindow", "Check details"))
+        self.label_5.setText(_translate("MainWindow", "Your password"))
+        self.label_6.setText(_translate("MainWindow", "Your notes"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow3()
+    ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
