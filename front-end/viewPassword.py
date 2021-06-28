@@ -158,7 +158,7 @@ class Ui_MainWindow(object):
                 break
             else:
                 print("sorry, Entry doesn't exist :(")
-                break
+                # break
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
