@@ -74,7 +74,9 @@ class Ui_SignUpForm(object):
             if(self.textEdit.toPlainText() == self.textEdit_2.toPlainText()):
                 data[0]['crypticMasterPass'] = self.textEdit_2.toPlainText()
                 newMasterPassword = data[0]['crypticMasterPass']
-                print(newMasterPassword)
+                data.append(newMasterPassword)
+                with open('passwords/jsons.json', 'w') as f:
+                    json.dump(data, f)
             else:
                 print("Passwords don't match")
         else:
