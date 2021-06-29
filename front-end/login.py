@@ -10,6 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from mainmenu import Ui_MainWindow2
+import json
 
 
 class Ui_MainWindow1(object):
@@ -65,7 +66,10 @@ class Ui_MainWindow1(object):
 
     def thirdscr(self):
         # code from 3rd screen
-        if(self.textEdit.toPlainText() == 'techClub'):
+        with open('passwords/jsons.json', 'r') as f:
+            crypticPassword = json.load(f)
+
+        if(self.textEdit.toPlainText() == crypticPassword[0]['crypticMasterPass']):
             self.MainWindow = QtWidgets.QMainWindow()
             self.ui = Ui_MainWindow2()
             self.ui.setupUi(self.MainWindow)

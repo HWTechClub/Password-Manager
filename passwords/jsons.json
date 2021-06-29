@@ -1,1 +1,146 @@
-[{"title": "test 2", "site": "www.google.com", "user": "user", "pwd": "pass", "notes": "hope this works"}, {"title": "test 1", "site": "google.com", "user": "om", "pwd": "ar", "notes": "0"}, {"title": "test 3", "site": "gogl.e", "user": "mo", "pwd": "le", "notes": "0"}, {"title": "testing", "site": "vision.co.uk", "user": "uk", "pwd": "co", "notes": "edits"}, {"title": "test2", "site": "google", "user": "om\\", "pwd": "aer", "notes": "0"}, {"title": "test 23", "site": "omar", "user": "khan", "pwd": "ohnoimessedup", "notes": "0"}, {"title": "gogl", "site": "fmovies.to", "user": "123", "pwd": "321", "notes": "0"}, {"title": "fmovies", "site": "fmovies.to", "user": "321", "pwd": "123", "notes": "editing successful"}, {"title": "gogle", "site": "win.com", "user": "pls", "pwd": "win", "notes": "0"}, {"title": "win", "site": "win.com", "user": "win", "pwd": "com", "notes": "editing success"}, {"title": "lets keep testing", "site": "test.org", "user": "test", "pwd": "ing", "notes": "0"}, {"title": "omar", "site": "khan.", "user": "123", "pwd": "321", "notes": "0"}, {"title": "kk", "site": "assseew", "user": "pipw", "pwd": "lasls", "notes": ""}, {"title": "khan", "site": "123", "user": "321", "pwd": "pws", "notes": "0"}, {"title": "Google", "site": "", "user": "", "pwd": "", "notes": ""}, {"title": "Gmail password", "site": "gmail", "user": "mohit", "pwd": "mohit", "notes": "0"}, {"title": "", "site": "", "user": "", "pwd": "", "notes": ""}, {"title": "facebook", "site": "facebook.com", "user": "mohit", "pwd": "mohit", "notes": "this is my fb password"}, {"title": "google", "site": "gmail", "user": "mk210", "pwd": "mohit123", "notes": "0"}, {"title": "test", "site": "test", "user": "mk210", "pwd": "mk210Yay", "notes": "nopes"}, {"title": "testing123", "site": "testing123.io", "user": "mohit.kvs1", "pwd": "!password", "notes": "testing123"}, {"title": "nothing", "site": "no.io", "user": "hello", "pwd": "hello123", "notes": "checking notes"}, {"title": "nothingmuch", "site": "hellno.io", "user": "hellno", "pwd": "tygubuygbyug", "notes": "just cgecking"}]
+[
+  { "crypticMasterPass": "theMasterPasswordIsNotThePassword" },
+  {
+    "title": "test 2",
+    "site": "www.google.com",
+    "user": "user",
+    "pwd": "pass",
+    "notes": "hope this works"
+  },
+  {
+    "title": "test 1",
+    "site": "google.com",
+    "user": "om",
+    "pwd": "ar",
+    "notes": "0"
+  },
+  {
+    "title": "test 3",
+    "site": "gogl.e",
+    "user": "mo",
+    "pwd": "le",
+    "notes": "0"
+  },
+  {
+    "title": "testing",
+    "site": "vision.co.uk",
+    "user": "uk",
+    "pwd": "co",
+    "notes": "edits"
+  },
+  {
+    "title": "test2",
+    "site": "google",
+    "user": "om\\",
+    "pwd": "aer",
+    "notes": "0"
+  },
+  {
+    "title": "test 23",
+    "site": "omar",
+    "user": "khan",
+    "pwd": "ohnoimessedup",
+    "notes": "0"
+  },
+  {
+    "title": "gogl",
+    "site": "fmovies.to",
+    "user": "123",
+    "pwd": "321",
+    "notes": "0"
+  },
+  {
+    "title": "fmovies",
+    "site": "fmovies.to",
+    "user": "321",
+    "pwd": "123",
+    "notes": "editing successful"
+  },
+  {
+    "title": "gogle",
+    "site": "win.com",
+    "user": "pls",
+    "pwd": "win",
+    "notes": "0"
+  },
+  {
+    "title": "win",
+    "site": "win.com",
+    "user": "win",
+    "pwd": "com",
+    "notes": "editing success"
+  },
+  {
+    "title": "lets keep testing",
+    "site": "test.org",
+    "user": "test",
+    "pwd": "ing",
+    "notes": "0"
+  },
+  {
+    "title": "omar",
+    "site": "khan.",
+    "user": "123",
+    "pwd": "321",
+    "notes": "0"
+  },
+  {
+    "title": "kk",
+    "site": "assseew",
+    "user": "pipw",
+    "pwd": "lasls",
+    "notes": ""
+  },
+  { "title": "khan", "site": "123", "user": "321", "pwd": "pws", "notes": "0" },
+  { "title": "Google", "site": "", "user": "", "pwd": "", "notes": "" },
+  {
+    "title": "Gmail password",
+    "site": "gmail",
+    "user": "mohit",
+    "pwd": "mohit",
+    "notes": "0"
+  },
+  { "title": "", "site": "", "user": "", "pwd": "", "notes": "" },
+  {
+    "title": "facebook",
+    "site": "facebook.com",
+    "user": "mohit",
+    "pwd": "mohit",
+    "notes": "this is my fb password"
+  },
+  {
+    "title": "google",
+    "site": "gmail",
+    "user": "mk210",
+    "pwd": "mohit123",
+    "notes": "0"
+  },
+  {
+    "title": "test",
+    "site": "test",
+    "user": "mk210",
+    "pwd": "mk210Yay",
+    "notes": "nopes"
+  },
+  {
+    "title": "testing123",
+    "site": "testing123.io",
+    "user": "mohit.kvs1",
+    "pwd": "!password",
+    "notes": "testing123"
+  },
+  {
+    "title": "nothing",
+    "site": "no.io",
+    "user": "hello",
+    "pwd": "hello123",
+    "notes": "checking notes"
+  },
+  {
+    "title": "nothingmuch",
+    "site": "hellno.io",
+    "user": "hellno",
+    "pwd": "tygubuygbyug",
+    "notes": "just cgecking"
+  }
+]

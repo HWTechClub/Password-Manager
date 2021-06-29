@@ -9,8 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-#import 2nd screen
-from login import Ui_MainWindow1 
+# import 2nd screen
+from login import Ui_MainWindow1
+
 
 class Ui_PasswordManager(object):
     def setupUi(self, PasswordManager):
@@ -77,8 +78,10 @@ class Ui_PasswordManager(object):
         self.retranslateUi(PasswordManager)
         QtCore.QMetaObject.connectSlotsByName(PasswordManager)
         self.button1.clicked.connect(self.secondscr)
+        self.actionEXIT.triggered.connect(QtWidgets.QApplication.quit)
+
     def secondscr(self):
-        #code the 2nd screen here
+        # code the 2nd screen here
         self.MainWindow = QtWidgets.QMainWindow()
         self.ui = Ui_MainWindow1()
         self.ui.setupUi(self.MainWindow)
@@ -86,7 +89,8 @@ class Ui_PasswordManager(object):
 
     def retranslateUi(self, PasswordManager):
         _translate = QtCore.QCoreApplication.translate
-        PasswordManager.setWindowTitle(_translate("PasswordManager", "MainWindow"))
+        PasswordManager.setWindowTitle(
+            _translate("PasswordManager", "MainWindow"))
         self.label1.setText(_translate("PasswordManager", "PASSWORD MANAGER"))
         self.label2.setText(_translate("PasswordManager", "- HW Tech Club"))
         self.button1.setText(_translate("PasswordManager", "Start"))
