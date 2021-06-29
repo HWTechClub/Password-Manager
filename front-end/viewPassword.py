@@ -141,24 +141,29 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
+        self.lineEdit.setReadOnly(True)
+        self.textEdit.setReadOnly(True)
         self.pushButton.clicked.connect(self.verifySubmittedForm)
 
     def verifySubmittedForm(self):
-        with open("passwords/jsons.json", "r") as read:
-            data = json.load(read)
+        if(self.lineEdit_2.text() != "" and self.lineEdit_3.text() != ""):
 
-        for i in range(len(data)):
-            site = data[i]["site"]
-            user = data[i]["user"]
+            with open("passwords/jsons.json", "r") as read:
+                data = json.load(read)
 
-            if(self.lineEdit_2.text() == site and self.lineEdit_3.text() == user):
-                self.lineEdit.setText(data[i]["pwd"])
-                self.textEdit.setText(data[i]["notes"])
-                break
+            for i in range(len(data)):
+                site = data[i]["site"]
+                user = data[i]["user"]
+
+                if(self.lineEdit_2.text() == site and self.lineEdit_3.text() == user):
+                    self.lineEdit.setText(data[i]["pwd"])
+                    self.textEdit.setText(data[i]["notes"])
+                    break
             else:
                 print("sorry, Entry doesn't exist :(")
                 # break
+        else:
+            print("Please enter Site name and user ID to continue")
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

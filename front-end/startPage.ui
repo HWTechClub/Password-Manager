@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>633</width>
-    <height>462</height>
+    <width>629</width>
+    <height>453</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -107,7 +107,20 @@
          </font>
         </property>
         <property name="text">
-         <string>Start</string>
+         <string>Login</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="button2">
+        <property name="font">
+         <font>
+          <family>Montserrat Medium</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Sign up</string>
         </property>
        </widget>
       </item>
@@ -120,7 +133,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>633</width>
+     <width>629</width>
      <height>26</height>
     </rect>
    </property>

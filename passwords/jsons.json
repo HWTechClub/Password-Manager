@@ -1,5 +1,12 @@
 [
-  { "crypticMasterPass": "theMasterPasswordIsNotThePassword" },
+  {
+    "crypticMasterPass": "",
+    "title": "",
+    "site": "",
+    "user": "",
+    "pwd": "",
+    "notes": ""
+  },
   {
     "title": "test 2",
     "site": "www.google.com",
@@ -31,7 +38,7 @@
   {
     "title": "test2",
     "site": "google",
-    "user": "om\\",
+    "user": "om",
     "pwd": "aer",
     "notes": "0"
   },

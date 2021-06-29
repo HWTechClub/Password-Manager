@@ -11,12 +11,13 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 # import 2nd screen
 from login import Ui_MainWindow1
+from signUp import Ui_SignUpForm
 
 
 class Ui_PasswordManager(object):
     def setupUi(self, PasswordManager):
         PasswordManager.setObjectName("PasswordManager")
-        PasswordManager.resize(633, 462)
+        PasswordManager.resize(629, 453)
         PasswordManager.setMinimumSize(QtCore.QSize(0, 0))
         self.centralwidget = QtWidgets.QWidget(PasswordManager)
         self.centralwidget.setObjectName("centralwidget")
@@ -59,10 +60,17 @@ class Ui_PasswordManager(object):
         self.button1.setFont(font)
         self.button1.setObjectName("button1")
         self.gridLayout_2.addWidget(self.button1, 0, 0, 1, 1)
+        self.button2 = QtWidgets.QPushButton(self.centralwidget)
+        font = QtGui.QFont()
+        font.setFamily("Montserrat Medium")
+        font.setPointSize(11)
+        self.button2.setFont(font)
+        self.button2.setObjectName("button2")
+        self.gridLayout_2.addWidget(self.button2, 1, 0, 1, 1)
         self.verticalLayout.addLayout(self.gridLayout_2)
         PasswordManager.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(PasswordManager)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 633, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 629, 26))
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")
@@ -77,7 +85,13 @@ class Ui_PasswordManager(object):
 
         self.retranslateUi(PasswordManager)
         QtCore.QMetaObject.connectSlotsByName(PasswordManager)
+        self.retranslateUi(PasswordManager)
+        QtCore.QMetaObject.connectSlotsByName(PasswordManager)
+        # for master password screen
         self.button1.clicked.connect(self.secondscr)
+        # for the sign up page screen
+        self.button2.clicked.connect(self.signUpScr)
+
         self.actionEXIT.triggered.connect(QtWidgets.QApplication.quit)
 
     def secondscr(self):
@@ -87,13 +101,20 @@ class Ui_PasswordManager(object):
         self.ui.setupUi(self.MainWindow)
         self.MainWindow.show()
 
+    def signUpScr(self):
+        self.MainWindow = QtWidgets.QMainWindow()
+        self.ui = Ui_SignUpForm()
+        self.ui.setupUi(self.MainWindow)
+        self.MainWindow.show()
+
     def retranslateUi(self, PasswordManager):
         _translate = QtCore.QCoreApplication.translate
         PasswordManager.setWindowTitle(
             _translate("PasswordManager", "MainWindow"))
         self.label1.setText(_translate("PasswordManager", "PASSWORD MANAGER"))
         self.label2.setText(_translate("PasswordManager", "- HW Tech Club"))
-        self.button1.setText(_translate("PasswordManager", "Start"))
+        self.button1.setText(_translate("PasswordManager", "Login"))
+        self.button2.setText(_translate("PasswordManager", "Sign up"))
         self.menuFile.setTitle(_translate("PasswordManager", "File"))
         self.actionEXIT.setText(_translate("PasswordManager", "Exit"))
 
