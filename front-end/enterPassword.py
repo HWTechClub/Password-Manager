@@ -182,13 +182,13 @@ class Ui_MainWindow3(object):
         newData = {"title": self.lineEdit.text(),
                    "site": self.lineEdit_2.text(), "user": self.lineEdit_3.text(), "pwd": self.lineEdit_4.text(), "notes": self.additionalText.toPlainText()}
 
-        with open("passwords/jsons.json", "r") as f:
+        with open("../passwords/jsons.json", "r") as f:
             data = json.load(f)
 
         # print(data)
         data.append(newData)
 
-        with open("passwords/jsons.json", "w") as file:
+        with open("../passwords/jsons.json", "w") as file:
             json.dump(data, file)
 
 

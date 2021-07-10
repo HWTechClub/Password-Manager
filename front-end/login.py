@@ -66,7 +66,7 @@ class Ui_MainWindow1(object):
 
     def thirdscr(self):
         # code from 3rd screen
-        with open('passwords/jsons.json', 'r') as f:
+        with open('../passwords/jsons.json', 'r') as f:
             crypticPassword = json.load(f)
 
         if(self.textEdit.toPlainText() == crypticPassword[0]['crypticMasterPass']):

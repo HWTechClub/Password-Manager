@@ -148,7 +148,7 @@ class Ui_MainWindow(object):
     def verifySubmittedForm(self):
         if(self.lineEdit_2.text() != "" and self.lineEdit_3.text() != ""):
 
-            with open("passwords/jsons.json", "r") as read:
+            with open("../passwords/jsons.json", "r") as read:
                 data = json.load(read)
 
             for i in range(len(data)):
