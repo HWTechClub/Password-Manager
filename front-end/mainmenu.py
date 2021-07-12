@@ -10,7 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from enterPassword import Ui_MainWindow3
-from viewPassword import Ui_MainWindow as Ui_MainWindow4
+from viewPassword import Ui_ViewPassword as Ui_MainWindow4
 
 
 class Ui_MainWindow2(object):

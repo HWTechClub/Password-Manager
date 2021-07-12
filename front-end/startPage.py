@@ -10,8 +10,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 # import 2nd screen
-from login import Ui_MainWindow1
-from signUp import Ui_SignUpForm
+from signInPage import Ui_SignInPage
+from signUpPage import Ui_SignUpPage
 
 
 class Ui_PasswordManager(object):
@@ -96,14 +96,16 @@ class Ui_PasswordManager(object):
 
     def secondscr(self):
         # code the 2nd screen here
+        PasswordManager.close()
         self.MainWindow = QtWidgets.QMainWindow()
-        self.ui = Ui_MainWindow1()
+        self.ui = Ui_SignInPage()
         self.ui.setupUi(self.MainWindow)
         self.MainWindow.show()
 
     def signUpScr(self):
+        PasswordManager.close()
         self.MainWindow = QtWidgets.QMainWindow()
-        self.ui = Ui_SignUpForm()
+        self.ui = Ui_SignUpPage()
         self.ui.setupUi(self.MainWindow)
         self.MainWindow.show()
 

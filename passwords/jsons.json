@@ -1,15 +1,7 @@
 [
   {
-    "crypticMasterPass": "cdc",
-    "title": "x",
-    "site": "x",
-    "user": "x",
-    "pwd": "x",
-    "notes": "0"
-  },
-  {
     "title": "test 2",
-    "site": "www.google.com",
+    "site": "google.com",
     "user": "user",
     "pwd": "pass",
     "notes": "hope this works"
@@ -19,6 +11,13 @@
     "site": "google.com",
     "user": "om",
     "pwd": "ar",
+    "notes": "0"
+  },
+  {
+    "title": "test 1",
+    "site": "google.com",
+    "user": "omdvd",
+    "pwd": "ardvd",
     "notes": "0"
   },
   {
@@ -107,7 +106,7 @@
   },
   {
     "title": "Google",
-    "site": "",
+    "site": "dvdv",
     "user": "",
     "pwd": "",
     "notes": ""
@@ -121,7 +120,7 @@
   },
   {
     "title": "",
-    "site": "",
+    "site": "dvdv",
     "user": "",
     "pwd": "",
     "notes": ""
@@ -167,35 +166,5 @@
     "user": "hellno",
     "pwd": "tygubuygbyug",
     "notes": "just cgecking"
-  },
-  "heyyo",
-  "cdc",
-  {
-    "title": "hw",
-    "site": "hw.ac.uk",
-    "user": "wgb1",
-    "pwd": "wes",
-    "notes": "uni password"
-  },
-  {
-    "title": "hw",
-    "site": "hw.ac.uk",
-    "user": "wgb1",
-    "pwd": "wes",
-    "notes": "uni password"
-  },
-  {
-    "title": "hw",
-    "site": "hw.ac.uk",
-    "user": "wgb1",
-    "pwd": "wes",
-    "notes": "uni password"
-  },
-  {
-    "title": "hw",
-    "site": "hw.ac.uk",
-    "user": "wgb1",
-    "pwd": "wes",
-    "notes": "uni password"
   }
 ]
