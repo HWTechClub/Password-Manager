@@ -10,6 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 # from startPage import Ui_PasswordManager as psdd
+import startPage
 
 
 class Ui_SignInPage(object):
@@ -86,6 +87,7 @@ class Ui_SignInPage(object):
         QtCore.QMetaObject.connectSlotsByName(SignInPage)
 
         self.pushButton_2.clicked.connect(self.backToHomeScreen)
+        self.pushButton.clicked.connect(self.toMainMenu)
 
     def retranslateUi(self, SignInPage):
         _translate = QtCore.QCoreApplication.translate
@@ -97,13 +99,18 @@ class Ui_SignInPage(object):
         self.pushButton.setText(_translate("SignInPage", "Sign in"))
         self.pushButton_2.setText(_translate("SignInPage", "Back"))
 
+    def toMainMenu(self):
+        # TODO code for decypting the JSON file.
+        print("Going to Main screen after sign up")
+        pass
+
     def backToHomeScreen(self):
         print("Going back to homescreen")
-        # SignInPage.close()
-        # self.MainWindow = QtWidgets.QMainWindow()
-        # self.ui = Ui_PasswordManager()
-        # self.ui.setupUi(self.MainWindow)
-        # self.MainWindow.show()
+        SignInPage.close()
+        self.MainWindow = QtWidgets.QMainWindow()
+        self.ui = startPage.Ui_PasswordManager()
+        self.ui.setupUi(self.MainWindow)
+        self.MainWindow.show()
 
 
 if __name__ == "__main__":

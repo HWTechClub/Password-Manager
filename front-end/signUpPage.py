@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import startPage
 
 
 class Ui_SignUpPage(object):
@@ -81,7 +82,7 @@ class Ui_SignUpPage(object):
 
         self.retranslateUi(SignUpPage)
         QtCore.QMetaObject.connectSlotsByName(SignUpPage)
-
+        self.pushButton.clicked.connect(self.toMainscreen)
         self.pushButton_2.clicked.connect(self.backToHomeScreen)
 
     def retranslateUi(self, SignUpPage):
@@ -94,7 +95,17 @@ class Ui_SignUpPage(object):
         self.pushButton_2.setText(_translate("SignUpPage", "Back"))
 
     def backToHomeScreen(self):
-        print("Going back to homescreen!")
+        print("Going back to homescreen")
+        SignUpPage.close()
+        self.MainWindow = QtWidgets.QMainWindow()
+        self.ui = startPage.Ui_PasswordManager()
+        self.ui.setupUi(self.MainWindow)
+        self.MainWindow.show()
+
+    def toMainscreen(self):
+        # TODO code for encrypting the JSON file.
+        print("Going to Main screen after sign up")
+        pass
 
 
 if __name__ == "__main__":
