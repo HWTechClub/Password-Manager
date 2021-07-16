@@ -1,0 +1,13 @@
+By Wesley Barreto (16/7/2021)
+
+Important Note: You must be in the front-end directory before running startPage.py. This is to prevent file not found errors. 
+
+Created a new python file called securityUtils in the fron-end firctory that contains all the security functions. This file is basically an updated 
+version of security.py which is in the security directory.
+
+Added code for sign up. This code creates an empty file 'user.json' in the passwords directory. This file will contain the account info for the
+user's various accounts. If user signed up previously, then user should be taken to the main screen.
+
+Added code that does the decryption of user.json file when user logs in. Must encrypt this file when user logs out / exits from app.
+
+Moved initialization of salt to the create_key() function in security.py and securityUtils.py

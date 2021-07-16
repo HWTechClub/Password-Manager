@@ -9,9 +9,10 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from os import path
 # from startPage import Ui_PasswordManager as psdd
+import securityUtils as sec
 import startPage
-
 
 class Ui_SignInPage(object):
     def setupUi(self, SignInPage):
@@ -100,9 +101,24 @@ class Ui_SignInPage(object):
         self.pushButton_2.setText(_translate("SignInPage", "Back"))
 
     def toMainMenu(self):
-        # TODO code for decypting the JSON file.
-        print("Going to Main screen after sign up")
-        pass
+        # Code for decypting the JSON file.
+        if not path.isfile('../passwords/user.json'):
+            print("You must sign up with a username and password")     # TODO Make a dialog box with this message
+            pass
+        
+        # Get username and passwords from the text fields
+        username = self.lineEdit.text()
+        password = self.lineEdit_2.text()
+        
+        # Initializing the Fernet key to decrypt the user's JSON file
+        key = sec.create_key(username, password)
+
+        # Decrypting the user's JSON file
+        sec.decrypt(key)
+
+        print("Going to Main screen after log in")
+
+        # TODO Go to the main screen after user logs in
 
     def backToHomeScreen(self):
         print("Going back to homescreen")

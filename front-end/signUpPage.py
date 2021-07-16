@@ -9,6 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from os import path
+import securityUtils as sec
 import startPage
 
 
@@ -103,9 +105,31 @@ class Ui_SignUpPage(object):
         self.MainWindow.show()
 
     def toMainscreen(self):
-        # TODO code for encrypting the JSON file.
+        
+        # Code for creating the JSON file when user logs in for the first time. 
+        if not path.isfile('../passwords/user.json'):
+            with open('../passwords/user.json', 'x') as f:
+                pass
+        else:
+            # File already exists, so user signed up previously.
+            print("You have already signed up")     # TODO Make a dialog box with this message and go to log in screen
+
+            # TODO Remove later and put the following code when the user logs out / closes the app. 
+            # This is here for testing purposes.
+            
+            # Get username and passwords from the text fields
+            username = self.lineEdit.text()
+            password = self.lineEdit_2.text()
+            
+            # Initializing the Fernet key to decrypt the user's JSON file
+            key = sec.create_key(username, password)
+
+            # Encrypting the user's JSON file
+            sec.encrypt(key)
+
         print("Going to Main screen after sign up")
-        pass
+        
+        # TODO Go back to main screen  
 
 
 if __name__ == "__main__":

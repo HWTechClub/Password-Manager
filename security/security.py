@@ -25,6 +25,9 @@ def create_key(username, password):
     usernameInBytes = username.encode("utf8")
     pwdInBytes = password.encode("utf8")
 
+    # Initializing the salt
+    salt = init_salt(username)
+    
     '''
     Initialising the key derivation function. This function uses the SHA256 algorithm, the salt generated above and runs the algorithm for
     100 iterations. The length here is the desired length of the derived key in bytes.
@@ -70,7 +73,6 @@ def decrypt(key):
 username = input("Please enter your username\n")
 password = getpass.getpass()    
 #print("Password is - " + password)
-salt = init_salt(username)
 key = create_key(username, password)
 choice = input("Do you want to encrypt or decrypt? \nPress 1 to encrypt or press 2 to decrypt. ")
 if (choice == '1'):
