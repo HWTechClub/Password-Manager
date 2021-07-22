@@ -13,6 +13,9 @@ from os import path
 # from startPage import Ui_PasswordManager as psdd
 import securityUtils as sec
 import startPage
+import signInDialogueBox
+import mainmenu
+
 
 class Ui_SignInPage(object):
     def setupUi(self, SignInPage):
@@ -103,22 +106,30 @@ class Ui_SignInPage(object):
     def toMainMenu(self):
         # Code for decypting the JSON file.
         if not path.isfile('../passwords/user.json'):
-            print("You must sign up with a username and password")     # TODO Make a dialog box with this message
-            pass
-        
-        # Get username and passwords from the text fields
-        username = self.lineEdit.text()
-        password = self.lineEdit_2.text()
-        
-        # Initializing the Fernet key to decrypt the user's JSON file
-        key = sec.create_key(username, password)
+            # TODO Make a dialog box with this message
+            print("You must sign up with a username and password")
+            self.MainWindow = QtWidgets.QMainWindow()
+            self.ui = signInDialogueBox.Ui_MainWindow()
+            self.ui.setupUi(self.MainWindow)
+            self.MainWindow.show()
+        else:
+            # Get username and passwords from the text fields
+            username = self.lineEdit.text()
+            password = self.lineEdit_2.text()
 
-        # Decrypting the user's JSON file
-        sec.decrypt(key)
+            # Initializing the Fernet key to decrypt the user's JSON file
+            key = sec.create_key(username, password)
 
-        print("Going to Main screen after log in")
+            # Decrypting the user's JSON file
+            sec.decrypt(key)
 
-        # TODO Go to the main screen after user logs in
+            print("Going to Main screen after log in")
+
+            # TODO Go to the main screen after user logs in
+            self.MainWindow = QtWidgets.QMainWindow()
+            self.ui = mainmenu.Ui_MainWindow2()
+            self.ui.setupUi(self.MainWindow)
+            self.MainWindow.show()
 
     def backToHomeScreen(self):
         print("Going back to homescreen")

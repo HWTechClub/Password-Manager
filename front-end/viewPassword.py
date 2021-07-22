@@ -93,7 +93,7 @@ class Ui_ViewPassword(object):
     """
 
     def loadTableData(self):
-        with open("../passwords/jsons.json", "r") as read:
+        with open("../passwords/user.json", "r") as read:
             data = json.load(read)
 
         # to reset table eveytime this button is clicked.
