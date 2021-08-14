@@ -1,5 +1,5 @@
 # Password-Manager
-This is an open source Cyber security project managed by The Heriot Watt Tech Club. The source code has been licensed under ________________.
+This is an open source Cyber security project managed by The Heriot Watt Tech Club. The source code has been licensed under the GNU General Public License v2.0.
 
 ### How does the Password-Manager work?
 
